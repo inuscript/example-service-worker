@@ -1,5 +1,5 @@
 import * as React from "react"
 
 export default () => {
-  return <div>Childaer</div>
+  return <div>Creae</div>
 }
