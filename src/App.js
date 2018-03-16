@@ -2,17 +2,29 @@ import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Child from "./Child.jsx";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+console.log("timestamp:4");
+
+const animation = keyframes`
+  from {
+    opacity 0;
+  }
+  to {
+    opacity 1;
+  }
+`;
 
 const Modal = styled.div`
   z-index: 100;
   width: 100%;
-  height: 1.5em;
+  height: 3em;
+  line-height: 3em;
   position: fixed;
   top: 0;
-  background: red;
+  background: #f44292;
   color: white;
   cursor: pointer;
+  animation: ${animation} 1s linear;
 `;
 
 class ModalMessage extends Component {
@@ -26,13 +38,16 @@ class ModalMessage extends Component {
       });
     });
   }
+  onClick = () => {
+    window.location.reload();
+  };
   render() {
     if (!this.state.show) {
       return null;
     }
     return (
-      <Modal>
-        <a href="/">New Content Available! please reload</a>
+      <Modal onClick={this.onClick}>
+        <span>New Content Available! please reload</span>
       </Modal>
     );
   }
