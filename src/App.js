@@ -3,7 +3,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import Child from "./Child.jsx";
 import styled, { keyframes } from "styled-components";
-console.log("timestamp:4");
+
+console.log("cachebuster:8");
 
 const animation = keyframes`
   from {
@@ -47,7 +48,7 @@ class ModalMessage extends Component {
     }
     return (
       <Modal onClick={this.onClick}>
-        <span>New Content Available! please reload</span>
+        <span> New Content Available!please reload </span>{" "}
       </Modal>
     );
   }
@@ -60,11 +61,14 @@ class App extends Component {
         <ModalMessage />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome Service Worker Reload sample</h1>
-        </header>
+          <h1 className="App-title">
+            {" "}
+            Welcome Service Worker Reload sample{" "}
+          </h1>{" "}
+        </header>{" "}
         <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          To get started, edit <code> src / App.js </code> and save to reload.{" "}
+        </p>{" "}
         <Child />
       </div>
     );
