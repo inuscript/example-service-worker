@@ -4,7 +4,7 @@ import "./App.css";
 import Child from "./Child.jsx";
 import styled, { keyframes } from "styled-components";
 
-console.log("cachebuster:1");
+console.log("%ccachebuster 2", "font-size:2em; color:blue");
 
 const animation = keyframes`
   from {
@@ -40,7 +40,7 @@ class ModalMessage extends Component {
     });
   }
   onClick = () => {
-    window.location.reload(true);
+    window.location.reload(window.location.href);
   };
   render() {
     if (!this.state.show) {
@@ -61,11 +61,11 @@ class App extends Component {
         <ModalMessage />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Worker Reload sample</h1>
-        </header>
+          <h1 className="App-title"> Worker Reload sample </h1>{" "}
+        </header>{" "}
         <p className="App-intro">
-          To get started, edit <code> src / App.js </code> and save to reload.
-        </p>
+          To get started, edit <code> src / App.js </code> and save to reload.{" "}
+        </p>{" "}
         <Child />
       </div>
     );
